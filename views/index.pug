@@ -8,13 +8,65 @@ block content
     input(type="text" name="task")
     input(type="submit" value="add")
 
-  
-  div.calender
+  .content
+    .calendar-container
+      .calendar
+        .year-header
+          span#prev.left-button  &#x2329; 
+          span#label.year
+          span#next.right-button  &#x232A; 
+        table.months-table
+          tbody
+            tr.months-row
+              td.month Jan
+              td.month Feb
+              td.month Mar
+              td.month Apr
+              td.month May
+              td.month Jun
+              td.month Jul
+              td.month Aug
+              td.month Sep
+              td.month Oct
+              td.month Nov
+              td.month Dec
+        table.days-table
+          td.day Sun
+          td.day Mon
+          td.day Tue
+          td.day Wed
+          td.day Thu
+          td.day Fri
+          td.day Sat
+        .frame
+          table.dates-table
+            tbody.tbody
+        button#add-button.button Add Event
+    .events-container
+    #dialog.dialog
+      h2.dialog-header  Add New Event 
+      form#form.form
+        .form-container(align='center')
+          label#valueFromMyButton.form-label(for='name') Event name
+          input#name.input(type='text' maxlength='36')
+          label#valueFromMyButton.form-label(for='count') Number of people to invite
+          input#count.input(type='number' min='0' max='1000000' maxlength='7')
+          input#cancel-button.button(type='button' value='Cancel')
+          input#ok-button.button(type='button' value='OK')
+
+
+
+
       
-    form(action=`/bookingform` method="post")
-      input.book-button(
-        type="submit"
-        value="Book a car"
-      )
+  form(action=`/bookingform` method="post")
+    input.book-button(
+      type="submit"
+      value="Book a car"
+    )
+
+
+  //- Dialog Box
+  script(src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous')
+  script(src='app.js')
 
     
