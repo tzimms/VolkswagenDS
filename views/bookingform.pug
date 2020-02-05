@@ -5,7 +5,9 @@ block content
   p Welcome to #{title}
 
   form.date-input(action="/new" method="post")
+    input(type="text" name="task" placeholder="first and last name")
     input(type="text" name="task")
+
     input(type="submit" value="add")
 
   

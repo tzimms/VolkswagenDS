@@ -4,6 +4,7 @@ const getAllBookings = (req, res, next) => {
     Booking.getAll((err, results) => {
       if (err) return next(err);
       req.bookings = results;
+      console.log(results)
       return next();
     })
 };
