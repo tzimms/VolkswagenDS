@@ -1,10 +1,25 @@
 const showHomepage = (req, res, next) => {
-    res.render('index', { title: 'Wild Code School', tasks: req.tasks });
+    const bookings = req.bookings;
+    res.render('index', { bookings });
 }
 
+// const showEditPage = (req, res,next) => {
+//     res.render("edit", { task: req.task });
+// };
 
-const showEditPage = (req, res,next) => {
-    res.render("edit", { task: req.task });
+const showBookingPage = (req, res,next) => {
+    const bookings = req.bookings; 
+    res.render('bookingform', { bookings });
 };
 
-module.exports = { showHomepage, showEditPage };
+const showReservationListPage = (req, res,next) => {
+    const bookings = req.bookings; 
+    res.render('reservationlist', { bookings });
+};
+
+const showCheckInOut = (req, res,next) => {
+    const bookings = req.bookings; 
+    res.render('checkinout', { bookings });
+};
+
+module.exports = { showHomepage, showBookingPage, showReservationListPage, showCheckInOut };

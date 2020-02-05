@@ -8,4 +8,4 @@ connection.query('DROP TABLE booking', (err) => {
       console.log('query complete');
       connection.end();
     })
-})
+});
