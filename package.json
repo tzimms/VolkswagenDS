@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "dev": "DEBUG=basic-express-boilerplate:* nodemon ./bin/www",
     "db:create": "node ./db/create.js",
-    "db:seed": "node ./db/seed.js"
+    "db:seed": "node ./db/seed.js",
+    "db:drop": "node ./db/reset.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
