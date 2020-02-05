@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Posts
+
+  a(href="/") Back to Home
+
+  ul
+    for post in posts
+        li 
+            h3= post.title
+            p= post.content
