@@ -37,10 +37,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 // add more routers here:
  app.use('/bookingform', bookingRouter);
-// app.use('/reservationlist', reservationRouter);
-// app.use('/checkinout', checkinoutRouter);
+//  app.use('/reservationlist', reservationRouter);
+//   app.use('/checkinout', checkinoutRouter);
 
-// app.use('/posts', postsRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
