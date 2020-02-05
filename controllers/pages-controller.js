@@ -17,9 +17,9 @@ const showReservationListPage = (req, res,next) => {
     res.render('reservationlist', { bookings });
 };
 
-const showCheckInOut = (req, res,next) => {
+const showCheckInOutPage = (req, res,next) => {
     const bookings = req.bookings; 
     res.render('checkinout', { bookings });
 };
 
-module.exports = { showHomepage, showBookingPage, showReservationListPage, showCheckInOut };
+module.exports = { showHomepage, showBookingPage, showReservationListPage, showCheckInOutPage };

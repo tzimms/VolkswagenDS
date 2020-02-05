@@ -10,7 +10,7 @@ const indexRouter = require('./routes/index');
 // const postsRouter = require('./routes/posts');
 const bookingRouter = require('./routes/bookingform');
 // const reservationRouter = require('./routes/reservationlist');
-// const checkinoutRouter = require('./routes/checkinout');
+const checkinoutRouter = require('./routes/checkinout');
 
 
 const app = express();
@@ -36,9 +36,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 // add more routers here:
- app.use('/bookingform', bookingRouter);
+app.use('/bookingform', bookingRouter);
 //  app.use('/reservationlist', reservationRouter);
-  // app.use('/checkinout', checkinoutRouter);
+app.use('/checkinout', checkinoutRouter);
 
 
 // catch 404 and forward to error handler
