@@ -16,6 +16,8 @@ Booking.create = (bookingInfo, callback) => {
             ?,
             ?,
             ?,
+            ?,
+            ?,
             ?
         )`,
         [bookingInfo.name, bookingInfo.date, bookingInfo.start_time, bookingInfo.end_time, bookingInfo.destination, +bookingInfo.vehicle_id],
@@ -24,15 +26,34 @@ Booking.create = (bookingInfo, callback) => {
 };
     
 
-Booking.update = (id, taskInfo, callback) => {
-    const sql = `UPDATE booking
-     SET ?
-     WHERE id = ?`;
-    connection.query(sql, [taskInfo, id], (err, results) => {
+Booking.update = (id, bookingInfo, callback) => {
+    connection.query( `UPDATE booking 
+     SET
+        start_time = ?,
+        start_km = ?
+     WHERE 
+        id = ?`,
+     [bookingInfo.start_time, bookingInfo.start_km, id], 
+      (err, results) => {
         callback(err, results);
     },
     );
 };
+
+Booking.final = (id,bookingInfo, callback) => {
+    connection.query(`UPDATE booking 
+     SET 
+        end_time = ?,
+        end_km = ?
+     WHERE 
+        id = ?`,
+    [bookingInfo.end_time, bookingInfo.end_km, id], 
+    (err, results) => {
+        callback(err, results);
+    },
+    );
+};
+
 
 
 module.exports = Booking;
