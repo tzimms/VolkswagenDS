@@ -5,6 +5,6 @@ const { getAllBookings } = require('../controllers/bookingform-controller');
 
 
 
-router.get('/', showReservationListPage, getAllBookings)
+router.get('/',  getAllBookings, showReservationListPage)
 
 module.exports = router;
