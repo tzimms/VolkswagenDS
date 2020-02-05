@@ -1,8 +1,31 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+// body {
+//   padding: 50px;
+//   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+// }
+
+// a {
+//   text-decoration: none;
+// }
+
+//GENERAL--------------------------------------GENERAL//
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900);
+
+
+
+//LANDING-----------------------------------------LANDING//
+
+
+h1 {
+  color: #a9adb2;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 50px;
 }
 
-a {
-  text-decoration: none;
+p {
+  color: #a9adb2;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
 }
