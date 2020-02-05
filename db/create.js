@@ -24,7 +24,7 @@ const Booking = `
     vehicle_id INT NOT NULL,
     PRIMARY KEY (id),
       FOREIGN KEY (vehicle_id)
-      REFERENCES volkswagen.vehicle (id)
+      REFERENCES vehicle (id)
     );
 `;
 
