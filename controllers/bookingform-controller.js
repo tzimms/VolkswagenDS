@@ -8,4 +8,29 @@ const getAllBookings = (req, res, next) => {
     })
 };
 
-    module.exports = { getAllBookings }
+
+const createBooking =  (req, res, next) => {
+    Booking.create(req.body, (err) => {
+        console.log('hello', err)
+		if (err) return res.render('error', { err });
+        res.redirect('/');
+    })
+};
+
+const updateBooking = (req, res, next) => {
+    Booking.update(req.params.id, req.body, (err) => {
+        console.log('hello', err)
+		if (err) return res.render('error', { err });
+        res.redirect('/');
+    })
+};
+
+const finalizeBooking = (req, res, next) => {
+    Booking.final(req.params.id, req.body, (err) => {
+        console.log('hello', err)
+		if (err) return res.render('error', { err });
+        res.redirect('/');
+    })
+};
+
+    module.exports = { getAllBookings, createBooking, updateBooking, finalizeBooking }
