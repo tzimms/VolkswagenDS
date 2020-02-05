@@ -3,8 +3,9 @@ const router = express.Router();
 const { showHomepage, showEditPage } = require('../controllers/pages-controller');
 const { getAllTasks, addNewTask, toggleDone, deleteTask, getCurrentTask, editCurrentTask } = require('../controllers/tasks-controller');
 
+
 /* GET home page. */
-router.get('/', getAllTasks, showHomepage)
+router.get('/', showHomepage)
 
 /*POST new task*/
 router.post('/new', addNewTask)
