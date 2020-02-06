@@ -1,5 +1,4 @@
-const connection = require('./config');
-
+const connection = require("./config");
 
 const Vehicle = `
   CREATE TABLE IF NOT EXISTS vehicle (
@@ -7,10 +6,7 @@ const Vehicle = `
     model VARCHAR(225) NOT NULL,
     licence VARCHAR(225) NOT NULL,
     PRIMARY KEY (id)
-  );`
-  ;
-
-
+  );`;
 const Booking = `
   CREATE TABLE IF NOT EXISTS booking (
     id INT NOT NULL AUTO_INCREMENT,
@@ -28,22 +24,20 @@ const Booking = `
     );
 `;
 
-
-
-  connection.query(Vehicle, (err) => {
-    if (err) {
-      console.log(err);
-      connection.end();
-    } else {
-      console.log('vehicle created');
-      connection.query(Booking, (err) => {
-        if (err) {
-          console.log(err);
-          connection.end();
-        } else {
-            console.log('booking created');
-        }}
-     )
-     connection.end();}
-    }
-)
+connection.query(Vehicle, err => {
+  if (err) {
+    console.log(err);
+    connection.end();
+  } else {
+    console.log("vehicle created");
+    connection.query(Booking, err => {
+      if (err) {
+        console.log(err);
+        connection.end();
+      } else {
+        console.log("booking created");
+      }
+    });
+    connection.end();
+  }
+});
