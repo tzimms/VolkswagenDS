@@ -9,7 +9,7 @@ const indexRouter = require('./routes/index');
 // // import other routers here like:
 // const postsRouter = require('./routes/posts');
 const bookingRouter = require('./routes/bookingform');
-// const reservationRouter = require('./routes/reservationlist');
+const reservationRouter = require('./routes/reservationlist');
 const checkinoutRouter = require('./routes/checkinout');
 
 
@@ -37,7 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 // add more routers here:
 app.use('/bookingform', bookingRouter);
-//  app.use('/reservationlist', reservationRouter);
+app.use('/reservationlist', reservationRouter);
 app.use('/checkinout', checkinoutRouter);
 
 
