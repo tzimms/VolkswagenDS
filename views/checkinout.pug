@@ -1,14 +1,18 @@
 extends layout
 
 block content
-  h1= CHECKIN
-  p Welcome to #{title}
+  h1 Welcome to check in and out
+  
 
-  form.date-input(action="/new" method="post")
-    input(type="text" name="task" placeholder="first and last name")
-    input(type="text" name="task")
+  form.update-input(action="/new" method="post")
+    input(type="text" name="task" placeholder="Your starting kilometers")
+    input(type="submit" value="Update")
 
-    input(type="submit" value="add")
+    form.-input(action="/new" method="post")
+    input(type="text" name="task" placeholder="Your final kilometers")
+    input(type="submit" value="Finalize")
+
+
 
   
 

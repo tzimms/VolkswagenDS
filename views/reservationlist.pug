@@ -1,41 +1,31 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
   
   .center
   each book in bookings 
-    .card.green
-      .additional
+    a.card(href="/checkinout" #{book.id})
+      .card-body
         .user-card
           .level.center
              | #{book.name}
-          .points.center
-            | #{book.destinatio}
         .more-info
           h1 #{book.name}
           .coords
             span #{book.start_time}
             span #{book.end_time}
           .coords
-            span Position/Role
-            span City, Country
+            span 
+            span #{book.destination}
           .stats
             div
-              .title Awards
-              .value 2
+              .title Start km
+              .value #{book.start_km}
             div
-              .title Matches
-              .value 27
-            div
-              .title Pals
-              .value 123
-            div
-              .title Coffee
-              .value.infinity &infin;
+              .title End km
+              .value #{book.end_km}
       .general
-        h1 #{book.name}
+        h1 #{book.date}
         p
-          | The car is Booked on #{book.date} from #{book.start_time} to #{book.end_time}
-        span.more Mouse over the card for more info
+          | The car is Booked by #{book.name} on #{book.date} from #{book.start_time} to #{book.end_time}
