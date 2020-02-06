@@ -26,6 +26,8 @@ const updateBooking = (req, res, next) => {
     })
 };
 
+
+
 const finalizeBooking = (req, res, next) => {
     Booking.final(req.params.id, req.body, (err) => {
         console.log('hello', err)
