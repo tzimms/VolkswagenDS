@@ -43,6 +43,9 @@ block content
             tbody.tbody
         button#add-button.button Add Drive
     .events-container
+    each booking in bookings
+      p.bookingData #{booking.date}
+        
     #dialog.dialog
       h2.dialog-header  Add New Drive 
       form#form.form
