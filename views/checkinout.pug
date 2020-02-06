@@ -2,15 +2,22 @@ extends layout
 
 block content
   h1 Welcome to check in and out
-  
 
-  form.update-input(action="/new" method="post")
-    input(type="text" name="task" placeholder="Your starting kilometers")
-    input(type="submit" value="Update")
+  .container_check
+    each book in bookings
+      form.update-input(action="/checkinout/update/" +book.id method="post")
+        label Start time:
+          input(type="text" name="start_time" value=book.start_time)
+        label Starting Kilometers:
+          input(type="text" name="start_km" placeholder="Your starting kilometers" value=book.start_km)
+        input.btn_start(type="submit" value="Start your journey")
 
-    form.-input(action="/new" method="post")
-    input(type="text" name="task" placeholder="Your final kilometers")
-    input(type="submit" value="Finalize")
+      form.final-input(action="/checkinout/final/" +book.id method="post")
+        label Ending time:
+          input(type="text" name="end_time" value=book.end_time)
+        label Ending Kilometers:
+          input(type="text" name="end_km" placeholder="Your final kilometers" value=book.end_km)
+        input.btn_final(type="submit" value="Finalize you journey")
 
 
 

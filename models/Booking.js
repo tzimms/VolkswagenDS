@@ -27,6 +27,7 @@ Booking.create = (bookingInfo, callback) => {
     
 
 Booking.update = (id, bookingInfo, callback) => {
+    console.log(bookingInfo)
     connection.query( `UPDATE booking 
      SET
         start_time = ?,
@@ -54,6 +55,13 @@ Booking.final = (id,bookingInfo, callback) => {
     );
 };
 
+
+Booking.findById = (id, cb) => {
+    const sql = `SELECT * FROM booking WHERE id = ?`;
+    connection.query(sql, id, (err, results, fields) => {
+        cb(err, results);
+    });
+};
 
 
 module.exports = Booking;
