@@ -22,14 +22,29 @@ block content
           .form-group
             label(for='destination') 
             input#autocomplete.form-control(placeholder='Enter your address', type='text', onclick='initAutocomplete()')
-          
+            a.btn.btn-secondary#btnMap(href="", target="_blank") See Map
 
   //- script(src='app.js')
+  
 
   script(async='false', type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyADkOAOJTkULh2P8xWk-5bsDfACm8ov7N0&libraries=places')
-  script(src='/javascripts/Map.js').
+  script.
+    let placeSearch, autocomplete;
+    const autocompleteInput = document.getElementById('autocomplete');
 
-
+    function initAutocomplete() {
+        console.log('eo')
+        autocomplete = new google.maps.places.Autocomplete(
+            (autocompleteInput),
+            {types: ['geocode']}
+        );   
+        
+        autocomplete.addListener('place_changed', () => {
+            const url = autocomplete.getPlace().url;
+            console.log('new locat', url)
+            document.getElementById("btnMap").href=url; 
+        })
+    }
 
 
 
