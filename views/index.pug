@@ -43,8 +43,11 @@ block content
             tbody.tbody
         button#add-button.button Add Drive
     .events-container
-    each booking in bookings
-      p.bookingData #{booking.date}
+    .booking-container
+      .booking-card
+        each book in bookings
+          p.bookingData #{book.start_time} to #{book.end_time}
+          
         
     #dialog.dialog
       h2.dialog-header  Add New Drive 

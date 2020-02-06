@@ -181,6 +181,8 @@ function new_event_json(name, count, date, day) {
   };
   event_data["events"].push(event);
 
+
+  
 //SENDING DATA
 
   const bookingFormLink = document.createElement("a");
@@ -195,6 +197,8 @@ function new_event_json(name, count, date, day) {
 
   document.getElementById("eventInfo").value = event.occasion;
 }
+
+
 
 // Display all events of the selected date in card views
 function show_events(events, month, day) {
@@ -215,6 +219,7 @@ function show_events(events, month, day) {
     $(event_card).css({ "border-left": "10px solid #FF1744" });
     $(event_card).append(event_name);
     $(".events-container").append(event_card);
+ 
   } else {
     // Go through and add each event as a card to the events container
     for (var i = 0; i < events.length; i++) {
