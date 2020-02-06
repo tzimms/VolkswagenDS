@@ -18,24 +18,32 @@ const createBooking = (req, res, next) => {
 };
 
 const updateBooking = (req, res, next) => {
-  Booking.update(req.params.id, req.body, err => {
+  console.log(req.body)
+  Booking.update(+req.params.id, req.body, err => {
     if (err) return res.render("error", { err });
-    res.redirect("/");
+    res.redirect("/checkinout/" +req.params.id);
   });
 };
-
-
 
 const finalizeBooking = (req, res, next) => {
-  Booking.final(req.params.id, req.body, err => {
+  Booking.final(+req.params.id, req.body, err => {
     if (err) return res.render("error", { err });
-    res.redirect("/");
+    res.redirect("/reservationlist");
   });
 };
+
+const getBookingById = (req, res, next) => {
+  Booking.findById(+req.params.id, (err, results) => {
+    if (err) return res.render("error", {err});
+    req.bookings = results;
+    next();
+  });
+}
 
 module.exports = {
   getAllBookings,
   createBooking,
   updateBooking,
-  finalizeBooking
+  finalizeBooking,
+  getBookingById
 };

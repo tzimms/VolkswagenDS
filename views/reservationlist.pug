@@ -5,7 +5,7 @@ block content
   
   .center
   each book in bookings 
-    a.card(href="/checkinout" #{book.id})
+    a.card(href='/checkinout/'+book.id)
       .card-body
         .user-card
           .level.center

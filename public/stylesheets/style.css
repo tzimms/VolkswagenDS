@@ -307,6 +307,22 @@ body {
 input[type=date] {
   text-align: left; }
 
+.mapouter {
+  position: relative;
+  text-align: right;
+  width: 100%;
+  height: auto; }
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  width: 100%;
+  height: auto; }
+
+iframe#gmap_canvas {
+  width: 100%;
+  height: auto; }
+
 /*--------Media Querys-----*/
 /* Tablets and smaller */
 @media only screen and (max-width: 780px) {
@@ -410,15 +426,6 @@ input[type=date] {
   position: relative;
   float: left; }
 
-.card .card-body .user-card::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 10%;
-  right: -2px;
-  height: 80%;
-  border-left: 2px solid rgba(0, 0, 0, 0.025); }
-
 .card .card-body .user-card .level {
   top: 15%;
   color: #fff;
@@ -491,5 +498,7 @@ input[type=date] {
 
 .card p {
   font-size: 20px; }
+
+/*----------------Check In and Out ---------------*/
 
 /*# sourceMappingURL=style.css.map */
