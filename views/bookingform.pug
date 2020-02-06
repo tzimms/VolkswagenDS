@@ -19,13 +19,18 @@ block content
             label(for='model') Select a car
             select.custom-select
               option(value='#{vehicle.model}') #{vehicle.model}
+          .form-group
+            label(for='destination') 
+            input#autocomplete.form-control(placeholder='Enter your address', type='text', onclick='initAutocomplete()')
+          
+
+  //- script(src='app.js')
+
+  script(async='false', type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyADkOAOJTkULh2P8xWk-5bsDfACm8ov7N0&libraries=places')
+  script(src='/javascripts/Map.js').
 
 
-  
-
-    
 
 
-    
 
 
