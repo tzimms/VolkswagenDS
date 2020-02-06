@@ -13,8 +13,8 @@ const showBookingPage = (req, res, next) => {
   const event = {
     name: req.query.event_name,
     time: req.query.event_count,
-    // year: req.query.event_year,
-    // month: req.query.event_month,
+    year: req.query.event_year,
+    month: req.query.event_month,
     day: req.query.event_day
   };
   //const event = req.params;
