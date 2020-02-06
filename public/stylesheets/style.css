@@ -1,32 +1,24 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900);
-h1 {
-  color: #a9adb2;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 80px;
-  text-align: center; }
-
-p {
+.index-title {
   color: #a9adb2;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 50px;
+  padding-top: 20px;
+  padding-bottom: 10px;
   text-align: center; }
 
 .date-input, .carBookBtn {
-  text-align: center; }
+  text-align: center;
+  padding-top: 10px; }
 
 /* Overall body and content */
 body {
   height: 100%;
   width: 100%;
   margin: 0;
-  background: #005C97;
-  background: -webkit-linear-gradient(left, #363795, #005C97);
-  background: -moz-linear-gradient(left, #363795, #005C97);
-  background: -o-linear-gradient(left, #363795, #005C97);
-  background: linear-gradient(to right, #363795, #005C97);
-  font-family: Helvetica; }
+  background: white;
+  font-family: 'Montserrat'; }
 
 .content {
   overflow: none;
@@ -35,10 +27,10 @@ body {
   height: 500px;
   position: relative;
   margin: 20px auto;
-  background: #52A0FD;
-  background: -moz-linear-gradient(right, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
-  background: -webkit-linear-gradient(right, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
-  background: linear-gradient(to left, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
+  background: #a21e4d;
+  background: -moz-linear-gradient(right, #a21e4d 0%, #b54b71 80%, #b54b71 100%);
+  background: -webkit-linear-gradient(right, #a21e4d 0%, #b54b71 80%, #b54b71 100%);
+  background: linear-gradient(to left, #a21e4d 0%, #b54b71 80%, #b54b71 100%);
   border-radius: 3px;
   box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   -moz-box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -65,7 +57,7 @@ body {
   margin: 20px auto;
   display: block;
   background: #fff;
-  border-left: 10px solid #52A0FD;
+  border-left: 10px solid #a21e4d;
   border-radius: 3px;
   box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   -moz-box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -77,7 +69,7 @@ body {
   font-size: 1rem; }
 
 .event-count {
-  color: #52A0FD;
+  color: #a21e4d;
   text-align: right; }
 
 .event-name {
@@ -108,10 +100,10 @@ body {
 
 /* Calendar Header */
 .year-header {
-  background: #52A0FD;
-  background: -moz-linear-gradient(left, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
-  background: -webkit-linear-gradient(left, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
-  background: linear-gradient(to right, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
+  background: #a21e4d;
+  background: -moz-linear-gradient(left, #a21e4d 0%, #b54b71 80%, #b54b71 100%);
+  background: -webkit-linear-gradient(left, #a21e4d 0%, #b54b71 80%, #b54b71 100%);
+  background: linear-gradient(to right, #a21e4d 0%, #b54b71 80%, #b54b71 100%);
   font-family: Helvetica;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -165,11 +157,11 @@ body {
   transition: .2s ease all;
   color: white;
   border: none;
-  box-shadow: -1px 10px 20px #9BC6FD;
-  background: #52A0FD;
-  background: -moz-linear-gradient(left, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
-  background: -webkit-linear-gradient(left, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
-  background: linear-gradient(to right, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%); }
+  box-shadow: -1px 10px 20px #e797b5;
+  background: #a21e4d;
+  background: -moz-linear-gradient(left, #a21e4d 0%, #b54b71 80%, #b54b71 100%);
+  background: -webkit-linear-gradient(left, #a21e4d 0%, #b54b71 80%, #b54b71 100%);
+  background: linear-gradient(to right, #a21e4d 0%, #b54b71 80%, #b54b71 100%); }
 
 #cancel-button {
   box-shadow: -1px 10px 20px #FF7DAE;
@@ -242,7 +234,7 @@ body {
   transition: all 250ms; }
 
 .table-date:not(.nil):hover {
-  border-color: #FF1744;
+  border-color: #a9adb2;
   box-shadow: 0 2px 6px RGBA(255, 50, 120, 0.9); }
 
 .event-date {
@@ -250,7 +242,7 @@ body {
   box-shadow: 0 2px 8px RGBA(130, 180, 255, 0.9); }
 
 .active-date {
-  background: #FF1744;
+  background: #a9adb2;
   box-shadow: 0 2px 8px RGBA(255, 50, 120, 0.9);
   color: #fff; }
 

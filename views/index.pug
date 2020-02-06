@@ -2,11 +2,11 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p.index-title Pool Car #{title}
 
-  form.date-input(action="/new" method="post")
-    input(type="text" name="task")
-    input(type="submit" value="add")
+  //- form.date-input(action="/new" method="post")
+  //-   input(type="text" name="task")
+  //-   input(type="submit" value="add")
 
   .content
     .calendar-container
@@ -41,15 +41,15 @@ block content
         .frame
           table.dates-table
             tbody.tbody
-        button#add-button.button Add Event
+        button#add-button.button Add Drive
     .events-container
     #dialog.dialog
-      h2.dialog-header  Add New Event 
+      h2.dialog-header  Add New Drive 
       form#form.form
         .form-container(align='center')
-          label#valueFromMyButton.form-label(for='name') Event name
+          label#valueFromMyButton.form-label(for='name') Your Name
           input#name.input(type='text' maxlength='36')
-          label#valueFromMyButton.form-label(for='count') Number of people to invite
+          label#valueFromMyButton.form-label(for='count') Time Schedule
           input#count.input(type='number' min='0' max='1000000' maxlength='7')
           input#cancel-button.button(type='button' value='Cancel')
           input#ok-button.button(type='button' value='OK')
@@ -68,7 +68,7 @@ block content
 
   //- Dialog Box
   script(src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous')
-  script(src='app.js')
-  script(src='/models/Calendar.js')
+  //- script(src='app.js')
+  script(src='/javascripts/Calendar.js')
 
     
