@@ -1,9 +1,16 @@
-// $(function () {
-//     $('#datetimepicker3').datetimepicker({
-//         format: 'LT'
-//     });
-// });
+let placeSearch, autocomplete;
+const autocompleteInput = document.getElementById('autocomplete');
 
-$(document).ready(function(){
-    console.log('djdjd');
-});
+function initAutocomplete() {
+    console.log('eo')
+    autocomplete = new google.maps.places.Autocomplete(
+        (autocompleteInput),
+        {types: ['geocode']}
+    );   
+    
+    autocomplete.addListener('place_changed', () => {
+        console.log('new locat', autocomplete.getPlace())
+    })
+}
+
+
