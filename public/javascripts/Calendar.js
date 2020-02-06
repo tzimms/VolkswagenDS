@@ -131,7 +131,7 @@ function new_event(event) {
   });
   // empty inputs and hide events
   $("#dialog input[type=text]").val("");
-  $("#dialog input[type=number]").val("");
+  $("#dialog input[type=time]").val("");
   $(".events-container").hide(250);
   $("#dialog").show(250);
   // Event handler for cancel button
@@ -182,7 +182,7 @@ function new_event_json(name, count, date, day) {
   event_data["events"].push(event);
 
 
-  
+
 //SENDING DATA
 
   const bookingFormLink = document.createElement("a");
@@ -210,7 +210,7 @@ function show_events(events, month, day) {
   if (events.length === 0) {
     var event_card = $("<div class='event-card'></div>");
     var event_name = $(
-      "<div class='event-name'>There are no events planned for " +
+      "<div class='event-name'>There are no bookings for " +
         month +
         " " +
         day +
@@ -230,7 +230,7 @@ function show_events(events, month, day) {
       var event_count = $(
         "<div class='event-count'>" +
           events[i]["invited_count"] +
-          " Invited</div>"
+          " Booked</div>"
       );
       if (events[i]["cancelled"] === true) {
         $(event_card).css({
