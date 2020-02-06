@@ -57,8 +57,15 @@ block content
 
 
 
-      
-  form.carBookBtn(action=`/bookingform` method="get")
+  
+  #bookingFormLinkDiv
+  
+  form.carBookBtn(action="/bookingform", method="post")
+    input#eventInfo(
+      name="event"
+      value=""
+      type="hidden"
+    )  
     input.book-button(
       type="submit"
       value="Book a car"
