@@ -10,6 +10,7 @@ note: there's a `yarn start` but that is for **production**
 Create a file in the root of the project called `keys.js` with the following:
 
 ```
+Team name: Its not a flaw its a feature.
 const keys = {
     MYSQL_USERNAME:  'my_username',
     MYSQL_PASSWORD:  'super_secret_password'
