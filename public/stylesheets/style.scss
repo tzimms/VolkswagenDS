@@ -330,6 +330,37 @@ body {
   border-color: #FF1744;
 }
 
+/*----------------BOOKING FORM ---------------*/
+
+input[type=date]{
+  text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------Media Querys-----*/
+
 /* Tablets and smaller */
 @media only screen and (max-width: 780px) {
   .content {
@@ -412,3 +443,5 @@ body {
       padding: 0.5rem 1.5rem;
   }
 } 
+
+
