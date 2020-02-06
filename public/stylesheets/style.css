@@ -296,6 +296,22 @@ body {
 input[type=date] {
   text-align: left; }
 
+.mapouter {
+  position: relative;
+  text-align: right;
+  width: 100%;
+  height: auto; }
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  width: 100%;
+  height: auto; }
+
+iframe#gmap_canvas {
+  width: 100%;
+  height: auto; }
+
 /*--------Media Querys-----*/
 /* Tablets and smaller */
 @media only screen and (max-width: 780px) {
