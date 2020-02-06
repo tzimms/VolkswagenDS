@@ -58,15 +58,17 @@ block content
 
 
       
-  form(action=`/bookingform` method="post")
+  form.carBookBtn(action=`/bookingform` method="post")
     input.book-button(
       type="submit"
       value="Book a car"
+      class="btn btn-success"
     )
 
 
   //- Dialog Box
   script(src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous')
   script(src='app.js')
+  script(src='/models/Calendar.js')
 
     

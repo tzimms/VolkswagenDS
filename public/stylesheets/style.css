@@ -13,6 +13,9 @@ p {
   font-size: 30px;
   text-align: center; }
 
+.date-input, .carBookBtn {
+  text-align: center; }
+
 /* Overall body and content */
 body {
   height: 100%;
