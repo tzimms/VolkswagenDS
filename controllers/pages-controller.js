@@ -8,8 +8,9 @@ const showHomepage = (req, res, next) => {
 // };
 
 const showBookingPage = (req, res,next) => {
-    const bookings = req.bookings; 
-    res.render('bookingform', { bookings });
+    const bookings = req.bookings;
+    const vehicles = req.vehicles; 
+    res.render('bookingform', { bookings, vehicles });
 };
 
 const showReservationListPage = (req, res,next) => {

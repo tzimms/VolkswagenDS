@@ -1,11 +1,11 @@
 const Vehicle = require('../models/Vehicle');
 
-const getAllVehicle = (req, res, next) => {
+const getAllVehicles = (req, res, next) => {
     Vehicle.getAll((err, results) => {
       if (err) return next(err);
-      req.vehicle = results;
+      req.vehicles = results;
       return next();
     })
 };
 
-    module.exports = { getAllVehicle }
+    module.exports = { getAllVehicles }
