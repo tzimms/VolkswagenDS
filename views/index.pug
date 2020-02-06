@@ -43,10 +43,10 @@ block content
             tbody.tbody
         button#add-button.button Add Drive
     .events-container
-    .booking-container
-      .booking-card
-        each book in bookings
-          p.bookingData #{book.start_time} to #{book.end_time}
+    //- .booking-container
+    //-   .booking-card
+    //-     each book in bookings
+    //-       p.bookingData #{book.start_time} to #{book.end_time}
           
         
     #dialog.dialog
@@ -56,7 +56,8 @@ block content
           label#valueFromMyButton.form-label(for='name') Your Name
           input#name.input(type='text' maxlength='36')
           label#valueFromMyButton.form-label(for='count') Time Schedule
-          input#count.input(type='number' min='0' max='1000000' maxlength='7')
+          input#count.input(type='time' min='0' max='1000000' maxlength='7')
+          input#count.input(type='time' min='0' max='1000000' maxlength='7')
           input#cancel-button.button(type='button' value='Cancel')
           input#ok-button.button(type='button' value='OK')
 
