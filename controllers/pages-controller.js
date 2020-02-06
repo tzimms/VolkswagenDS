@@ -9,6 +9,7 @@ const showHomepage = (req, res, next) => {
 
 const showBookingPage = (req, res, next) => {
   const bookings = req.body;
+  const vehicles = req.vehicles;
   const event = {
     name: req.query.event_name,
     time: req.query.event_count,
@@ -17,7 +18,8 @@ const showBookingPage = (req, res, next) => {
     day: req.query.event_day
   };
   //const event = req.params;
-  res.render("bookingform", { bookings, event });
+  console.log(vehicles);
+  res.render("bookingform", { bookings, event, vehicles});
 };
 
 const showReservationListPage = (req, res, next) => {
