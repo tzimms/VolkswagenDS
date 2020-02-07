@@ -3,7 +3,6 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  -console.log(event)
   each vehicle in vehicles
       div.container
         form(action="/bookingform" method="post")

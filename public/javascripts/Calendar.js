@@ -2,7 +2,6 @@
 
 $(document).ready(function() {
   let date = new Date();
-  // console.log("this is ", date);
   let today = date.getDate();
   // Set click handlers for DOM elements
   $(".right-button").click({ date: date }, next_year);
@@ -133,13 +132,15 @@ function new_event(event) {
   // empty inputs and hide events
   $("#dialog input[type=text]").val("");
   $("#dialog input[type=time]").val("");
+  $("#dialog input[type=time]").val("");
   //possibly here
   $(".events-container").hide(250);
   $("#dialog").show(250);
   // Event handler for cancel button
   $("#cancel-button").click(function() {
     $("#name").removeClass("error-input");
-    $("#time").removeClass("error-input");
+    $("#start_time").removeClass("error-input");
+    $("#end_time").removeClass("error-input");
     $("#dialog").hide(250);
     $(".events-container").show(250);
   });
@@ -148,30 +149,20 @@ function new_event(event) {
     .unbind()
     .click({ date: event.data.date }, function() {
       let date = event.data.date;
-      let name = $("#name")
-        .val()
-        .trim();
-      let time = parseInt(
-        $("#time")
-          .val()
-          .trim()
-      );
-      let timmy = parseInt(
-        $("#timmy")
-          .val()
-          .trim()
-      );
+      let name = $("#name").val().trim();
+      let start_time = ($("#start_time").val().trim());
+      let end_time = ($("#end_time").val().trim());
       let day = parseInt($(".active-date").html());
       // Basic form validation
       if (name.length === 0) {
         $("#name").addClass("error-input");
-      } else if (isNaN(time)) {
-        $("#time").addClass("error-input");
-      }else if (isNaN(timmy)) {
-        $("#timmy").addClass("error-input");
+      } else if (start_time === '') {
+        $("#start_time").addClass("error-input");
+      }else if (end_time === '') {
+        $("#end_time").addClass("error-input");
       } else {
         $("#dialog").hide(250);
-        new_event_json(name, time, timmy, date, day);
+        new_event_json(name, start_time, end_time, date, day);
         date.setDate(day);
         init_calendar(date);
       }
@@ -179,31 +170,29 @@ function new_event(event) {
 }
 
 // Adds a json event to event_data
-function new_event_json(name, time, timmy, date, day) {
+function new_event_json(name, start_time, end_time, date, day) {
   let event = {
     name: name,
-    start_time: time,
-    end_time: timmy, 
+    start_time: start_time,
+    end_time: end_time, 
     year: date.getFullYear(),
     month: date.getMonth() + 1,
     day: day
   };
   event_data["events"].push(event);
-  console.log('event', event)
-
-
-
-//SENDING DATA
+  let events = check_events(event.day, event.month, event.year)
+    show_events(events, event.month, event.day)
 
   const bookingFormLink = document.createElement("a");
   bookingFormLink.innerText = "BOOK NOW!";
   bookingFormLink.setAttribute(
     "href",
-    `/bookingform?event_name=${name}&start_time=${time}&end_time=${time}&event_day=${day}&event_month=${event.month}&event_year=${event.year}`
+    `/bookingform?event_name=${name}&start_time=${start_time}&end_time=${end_time}&event_day=${day}&event_month=${event.month}&event_year=${event.year}`
   );
   document.getElementById("bookingFormLinkDiv").appendChild(bookingFormLink);
 
   document.getElementById("eventInfo").value = event.name;
+  
 }
 
 // Display all events of the selected date in card views
@@ -231,14 +220,8 @@ function show_events(events, month, day) {
       let event_name = $(
         "<div class='event-name'>" + events[i]["name"] +  ":" + events[i]["start_time"] + "-" + events[i]["end_time"] + "</div>"
       );
-      // let event_time = $(
-      //   "<div class='event-count'>" +
-      //     events[i]["start_time"] +
-      //     " Booked</div>"
-      // );
       $(event_card)
         .append(event_name)
-        // .append(event_time);
       $(".events-container").append(event_card);
     }
   }
@@ -246,11 +229,9 @@ function show_events(events, month, day) {
 
 // Checks if a specific date has any events
 function check_events(day, month, year) {
-  console.log(month,'hi')
   let events = [];
   for (let i = 0; i < event_data["events"].length; i++) {
     let event = event_data["events"][i];
-    console.log(event["month"],'hoe')
     if ( 
       event["day"] === day &&
       event["month"]+1 === month &&
@@ -281,5 +262,3 @@ const months = [
   "December"
 ];
 
-// console.log('day', day);
-// module.exports = { day, today, events, calendar_days, month, year, day_count, row, first_day, curr_date, monthStart, monthEnd, new_year, new_month, name, count, months, event_card, event_count, event_data, event_name, events }
