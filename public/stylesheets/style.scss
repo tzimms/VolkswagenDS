@@ -557,7 +557,7 @@ iframe#gmap_canvas { width: 100%; height:auto;}
   }
 
 .filter-bar {
-  border: 1px solid #e1e1e1;;
+  border: 1px solid #e1e1e1;
   border-radius: 4px;
   padding: 1em;
   display: flex;
@@ -569,6 +569,7 @@ iframe#gmap_canvas { width: 100%; height:auto;}
   font-weight: 500;
   margin-right: 10x;
   flex: 0;
+  text-align: center;
 }
 
 .select-container {
@@ -577,4 +578,10 @@ iframe#gmap_canvas { width: 100%; height:auto;}
   border: 1px solid #e1e1e1;
   
 }
+
+.filter-bar__select {
+  width: 572px;
+  border: 1px solid #e1e1e1;
+}
+
   /*----------------Check In and Out ---------------*/
