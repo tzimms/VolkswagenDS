@@ -15,8 +15,8 @@ block content
 
   
     .center
-    each book in bookings 
-        a.card(href='/checkinout/'+book.id)
+    each book in bookingsmap 
+        .card
             .card-body#card-body
                 .user-card
                     .level#level
@@ -27,7 +27,13 @@ block content
                             .value #{book.start_time}
                             .title End time
                             .value #{book.end_time}
-            .general
+                        .delete
+                          form.update-input(action="/reservationlist/delete/" +book.id method="post")
+                                input.btn_start(type="submit" value="delete")
+
+
+                         
+            a.general(href='/checkinout/'+book.id)
                 h1 #{book.date}
                 p
                     | The car is booked by #{book.name} on #{book.date} from #{book.start_time} to #{book.end_time} to  #{book.destination}

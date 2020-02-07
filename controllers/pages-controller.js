@@ -15,9 +15,6 @@ const showHomepage = (req, res, next) => {
   res.render("index", { bookings, event_data });
 };
 
-// const showEditPage = (req, res,next) => {
-//     res.render("edit", { task: req.task });
-// };
 
 const showBookingPage = (req, res, next) => {
   const bookings = req.body;
@@ -30,13 +27,24 @@ const showBookingPage = (req, res, next) => {
     month: req.query.event_month + 1,
     year: req.query.event_year,
   };
-  console.log(event)
   res.render("bookingform", { bookings, event, vehicles});
 };
 
 const showReservationListPage = (req, res, next) => {
   const bookings = req.bookings;
-  res.render("reservationlist", { bookings });
+  const bookingsmap = bookings.map(book => ({
+      name: book.name,
+      id: book.id,
+      start_time: book.start_time, 
+      end_time: book.end_time,
+      date: book.date.toDateString(),
+      start_km: book.start_km, 
+      end_km: book.end_km,
+      destination: book.destination,
+      vehicle: book.vehicle_id
+    })
+  )
+  res.render("reservationlist", { bookings, bookingsmap });
 };
 
 const showCheckInOutPage = (req, res, next) => {

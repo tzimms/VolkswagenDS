@@ -39,10 +39,19 @@ const getBookingById = (req, res, next) => {
   });
 }
 
+ const deleteBooking = (req, res, next) => {
+   Booking.delete(+req.params.id, err => {
+    if (err) return res.render("error", { err });
+    res.redirect("/reservationlist");
+  });
+};
+
+
 module.exports = {
   getAllBookings,
   createBooking,
   updateBooking,
   finalizeBooking,
-  getBookingById
+  getBookingById,
+  deleteBooking
 };

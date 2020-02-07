@@ -10,7 +10,6 @@ block content
           input(type="text" name="start_time" value=book.start_time)
         label Starting Kilometers:
           input(type="text" name="start_km" placeholder="Your starting kilometers" value=book.start_km)
-        input.btn_start(type="submit" value="Start your journey")
 
       form.final-input(action="/checkinout/final/" +book.id method="post")
         label Ending time:
