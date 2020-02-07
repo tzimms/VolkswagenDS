@@ -15,7 +15,7 @@ block content
   
 
         .center
-        each book in bookings 
+        each book in bookingsmap 
             a.card(href='/checkinout/'+book.id)
                 .card-body
                     .user-card
@@ -27,6 +27,10 @@ block content
                                 .value #{book.start_time}
                                 .title End time
                                 .value #{book.end_time}
+                            .delete
+                                form.update-input(action="/reservationlist/delete/" +book.id method="post")
+                                    input.btn_start(type="submit" value="delete")
+
                 .general
                     h1 #{book.date}
                     p
