@@ -14,25 +14,6 @@ block content
                     
 
   
-<<<<<<< HEAD
-        .center
-        each book in bookingsmap 
-            .card
-                .card-body#card-body
-                    .user-card
-                        .level#level
-                            | #{book.name}
-                        .stats
-                            div
-                                .title Start time
-                                .value #{book.start_time}
-                                .title End time
-                                .value #{book.end_time}
-                            .delete
-                            form.update-input(action="/reservationlist/delete/" +book.id method="post")
-                                    input.btn_start(type="submit" value="delete")
-=======
->>>>>>> master
 
         .center
         each book in bookings 
@@ -61,23 +42,6 @@ block content
                             br
                             .value_x #{book.end_km}
 
-<<<<<<< HEAD
-                            
-                a.general(href='/checkinout/'+book.id)
-                    h1 #{book.date}
-                    p
-                        | The car is booked by #{book.name} on #{book.date} from #{book.start_time} to #{book.end_time} to  #{book.destination}
-                    .stats_x
-                        div
-                            .title_x Start km
-                            br
-                            .value_x #{book.start_km}
-                        div
-                            .title_x End km
-                            br
-                            .value_x #{book.end_km}
-=======
->>>>>>> master
 
 
     //- script.
