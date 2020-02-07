@@ -49,7 +49,7 @@ Booking.final = (id,bookingInfo, callback) => {
         end_km = ?
      WHERE 
         id = ?`,
-    [bookingInfo.end_time, bookingInfo.end_km, id], 
+    [bookingInfo.end_time, bookingInfo.end_km, +id], 
     (err, results) => {
         callback(err, results);
     },
@@ -64,5 +64,15 @@ Booking.findById = (id, cb) => {
     });
 };
 
+
+Booking.delete = (id, callback) => {
+    connection.query(
+        'DELETE FROM booking WHERE id=?',
+         id, (err, results, fields) => {
+            callback(err, results, fields)
+        }
+    )
+
+}
 
 module.exports = Booking;

@@ -471,6 +471,10 @@ input[type=date] {
   padding-top: 0;
   font-size: 15px; }
 
+.delete {
+  height: 1rem;
+  width: 4rem; }
+
 .flex-container {
   display: flex;
   justify-content: center;
