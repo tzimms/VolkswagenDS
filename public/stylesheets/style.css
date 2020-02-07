@@ -471,6 +471,46 @@ input[type=date] {
   padding-top: 0;
   font-size: 15px; }
 
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  box-sizing: inherit;
+  text-rendering: optimizeLegibility; }
+
+.wrap {
+  padding: 1em;
+  width: 100%;
+  max-width: 640px; }
+
+.wrap h1 {
+  color: #333;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5em;
+  font-weight: 300;
+  font-size: 2rem;
+  text-align: center; }
+
+.filter-bar {
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; }
+
+.filter-bar .text {
+  font-weight: 500;
+  margin-right: 10x;
+  flex: 0; }
+
+.select-container {
+  width: 100px;
+  flex: 1;
+  border: 1px solid #e1e1e1; }
+
 /*----------------Check In and Out ---------------*/
 
 /*# sourceMappingURL=style.css.map */
