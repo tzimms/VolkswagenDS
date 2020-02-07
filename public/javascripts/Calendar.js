@@ -1,8 +1,9 @@
 // Setup the calendar with the current date
+
 $(document).ready(function() {
-  var date = new Date();
-  console.log("this is ", date);
-  var today = date.getDate();
+  let date = new Date();
+  // console.log("this is ", date);
+  let today = date.getDate();
   // Set click handlers for DOM elements
   $(".right-button").click({ date: date }, next_year);
   $(".left-button").click({ date: date }, prev_year);
@@ -14,7 +15,8 @@ $(document).ready(function() {
     .eq(date.getMonth())
     .addClass("active-month");
   init_calendar(date);
-  var events = check_events(today, date.getMonth() + 1, date.getFullYear());
+  let events = check_events(today, date.getMonth() + 1, date.getFullYear());
+  
   show_events(events, months[date.getMonth()], today);
 });
 
@@ -22,19 +24,19 @@ $(document).ready(function() {
 function init_calendar(date) {
   $(".tbody").empty();
   $(".events-container").empty();
-  var calendar_days = $(".tbody");
-  var month = date.getMonth();
-  var year = date.getFullYear();
-  var day_count = days_in_month(month, year);
-  var row = $("<tr class='table-row'></tr>");
-  var today = date.getDate();
+  let calendar_days = $(".tbody");
+  let month = date.getMonth();
+  let year = date.getFullYear();
+  let day_count = days_in_month(month, year);
+  let row = $("<tr class='table-row'></tr>");
+  let today = date.getDate();
   // Set date to 1 to find the first day of the month
   date.setDate(1);
-  var first_day = date.getDay();
+  let first_day = date.getDay();
   // 35+firstDay is the number of date elements to be added to the dates table
   // 35 is from (7 days in a week) * (up to 5 rows of dates in a month)
   let day = 0;
-  for (var i = 0; i < 35 + first_day; i++) {
+  for (let i = 0; i < 35 + first_day; i++) {
     // Since some of the elements will be blank,
     // need to calculate actual date from index
     day = i - first_day + 1;
@@ -45,12 +47,11 @@ function init_calendar(date) {
     }
     // if current index isn't a day in this month, make it blank
     if (i < first_day || day > day_count) {
-      var curr_date = $("<td class='table-date nil'>" + "</td>");
+      let curr_date = $("<td class='table-date nil'>" + "</td>");
       row.append(curr_date);
     } else {
-      var curr_date = $("<td class='table-date'>" + day + "</td>");
-      console.log("currentDate", curr_date);
-      var events = check_events(day, month + 1, year);
+      let curr_date = $("<td class='table-date'>" + day + "</td>");
+      let events = check_events(day, month + 1, year); 
       if (today === day && $(".active-date").length === 0) {
         curr_date.addClass("active-date");
         show_events(events, months[month], day);
@@ -75,8 +76,8 @@ function init_calendar(date) {
 
 // Get the number of days in a given month/year
 function days_in_month(month, year) {
-  var monthStart = new Date(year, month, 1);
-  var monthEnd = new Date(year, month + 1, 1);
+  let monthStart = new Date(year, month, 1);
+  let monthEnd = new Date(year, month + 1, 1);
   return (monthEnd - monthStart) / (1000 * 60 * 60 * 24);
 }
 
@@ -93,10 +94,10 @@ function date_click(event) {
 function month_click(event) {
   $(".events-container").show(250);
   $("#dialog").hide(250);
-  var date = event.data.date;
+  let date = event.data.date;
   $(".active-month").removeClass("active-month");
   $(this).addClass("active-month");
-  var new_month = $(".month").index(this);
+  let new_month = $(".month").index(this);
   date.setMonth(new_month);
   init_calendar(date);
 }
@@ -104,8 +105,8 @@ function month_click(event) {
 // Event handler for when the year right-button is clicked
 function next_year(event) {
   $("#dialog").hide(250);
-  var date = event.data.date;
-  var new_year = date.getFullYear() + 1;
+  let date = event.data.date;
+  let new_year = date.getFullYear() + 1;
   $("year").html(new_year);
   date.setFullYear(new_year);
   init_calendar(date);
@@ -114,8 +115,8 @@ function next_year(event) {
 // Event handler for when the year left-button is clicked
 function prev_year(event) {
   $("#dialog").hide(250);
-  var date = event.data.date;
-  var new_year = date.getFullYear() - 1;
+  let date = event.data.date;
+  let new_year = date.getFullYear() - 1;
   $("year").html(new_year);
   date.setFullYear(new_year);
   init_calendar(date);
@@ -132,12 +133,13 @@ function new_event(event) {
   // empty inputs and hide events
   $("#dialog input[type=text]").val("");
   $("#dialog input[type=time]").val("");
+  //possibly here
   $(".events-container").hide(250);
   $("#dialog").show(250);
   // Event handler for cancel button
   $("#cancel-button").click(function() {
     $("#name").removeClass("error-input");
-    $("#count").removeClass("error-input");
+    $("#time").removeClass("error-input");
     $("#dialog").hide(250);
     $(".events-container").show(250);
   });
@@ -145,25 +147,31 @@ function new_event(event) {
   $("#ok-button")
     .unbind()
     .click({ date: event.data.date }, function() {
-      var date = event.data.date;
-      var name = $("#name")
+      let date = event.data.date;
+      let name = $("#name")
         .val()
         .trim();
-      var count = parseInt(
-        $("#count")
+      let time = parseInt(
+        $("#time")
           .val()
           .trim()
       );
-      var day = parseInt($(".active-date").html());
+      let timmy = parseInt(
+        $("#timmy")
+          .val()
+          .trim()
+      );
+      let day = parseInt($(".active-date").html());
       // Basic form validation
       if (name.length === 0) {
         $("#name").addClass("error-input");
-      } else if (isNaN(count)) {
-        $("#count").addClass("error-input");
+      } else if (isNaN(time)) {
+        $("#time").addClass("error-input");
+      }else if (isNaN(timmy)) {
+        $("#timmy").addClass("error-input");
       } else {
         $("#dialog").hide(250);
-        console.log("new event");
-        new_event_json(name, count, date, day);
+        new_event_json(name, time, timmy, date, day);
         date.setDate(day);
         init_calendar(date);
       }
@@ -171,15 +179,17 @@ function new_event(event) {
 }
 
 // Adds a json event to event_data
-function new_event_json(name, count, date, day) {
-  var event = {
-    occasion: name,
-    invited_count: count,
+function new_event_json(name, time, timmy, date, day) {
+  let event = {
+    name: name,
+    start_time: time,
+    end_time: timmy, 
     year: date.getFullYear(),
     month: date.getMonth() + 1,
     day: day
   };
   event_data["events"].push(event);
+  console.log('event', event)
 
 
 
@@ -189,28 +199,23 @@ function new_event_json(name, count, date, day) {
   bookingFormLink.innerText = "BOOK NOW!";
   bookingFormLink.setAttribute(
     "href",
-    `/bookingform?event_name=${name}&event_count=${count}&event_day=${day}`
+    `/bookingform?event_name=${name}&start_time=${time}&end_time=${time}&event_day=${day}&event_month=${event.month}&event_year=${event.year}`
   );
   document.getElementById("bookingFormLinkDiv").appendChild(bookingFormLink);
 
-  console.log("link here", bookingFormLink.attributes.href);
-
-  document.getElementById("eventInfo").value = event.occasion;
+  document.getElementById("eventInfo").value = event.name;
 }
-
-
 
 // Display all events of the selected date in card views
 function show_events(events, month, day) {
   // Clear the dates container
   $(".events-container").empty();
   $(".events-container").show(250);
-  console.log(event_data["events"]);
   // If there are no events for this date, notify the user
   if (events.length === 0) {
-    var event_card = $("<div class='event-card'></div>");
-    var event_name = $(
-      "<div class='event-name'>There are no bookings for " +
+    let event_card = $("<div class='event-card'></div>");
+    let event_name = $(
+      "<div class='event-name'>There are no events planned for " +
         month +
         " " +
         day +
@@ -219,28 +224,21 @@ function show_events(events, month, day) {
     $(event_card).css({ "border-left": "10px solid #FF1744" });
     $(event_card).append(event_name);
     $(".events-container").append(event_card);
- 
   } else {
     // Go through and add each event as a card to the events container
-    for (var i = 0; i < events.length; i++) {
-      var event_card = $("<div class='event-card'></div>");
-      var event_name = $(
-        "<div class='event-name'>" + events[i]["occasion"] + ":</div>"
+    for (let i = 0; i < events.length; i++) {
+      let event_card = $("<div class='event-card'></div>");
+      let event_name = $(
+        "<div class='event-name'>" + events[i]["name"] +  ":" + events[i]["start_time"] + "-" + events[i]["end_time"] + "</div>"
       );
-      var event_count = $(
-        "<div class='event-count'>" +
-          events[i]["invited_count"] +
-          " Booked</div>"
-      );
-      if (events[i]["cancelled"] === true) {
-        $(event_card).css({
-          "border-left": "10px solid #FF1744"
-        });
-        event_count = $("<div class='event-cancelled'>Cancelled</div>");
-      }
+      // let event_time = $(
+      //   "<div class='event-count'>" +
+      //     events[i]["start_time"] +
+      //     " Booked</div>"
+      // );
       $(event_card)
         .append(event_name)
-        .append(event_count);
+        // .append(event_time);
       $(".events-container").append(event_card);
     }
   }
@@ -248,108 +246,23 @@ function show_events(events, month, day) {
 
 // Checks if a specific date has any events
 function check_events(day, month, year) {
-  var events = [];
-  for (var i = 0; i < event_data["events"].length; i++) {
-    var event = event_data["events"][i];
-    if (
+  let events = [];
+  for (let i = 0; i < event_data["events"].length; i++) {
+    let event = event_data["events"][i];
+    if ( 
       event["day"] === day &&
       event["month"] === month &&
       event["year"] === year
     ) {
       events.push(event);
     }
-  }
+  } 
   return events;
 }
 
 // Given data for events in JSON format
-var event_data = {
-  events: [
-    {
-      occasion: " Repeated Test Event ",
-      invited_count: 120,
-      year: 2017,
-      month: 5,
-      day: 10,
-      cancelled: true
-    },
-    {
-      occasion: " Repeated Test Event ",
-      invited_count: 120,
-      year: 2017,
-      month: 5,
-      day: 10,
-      cancelled: true
-    },
-    {
-      occasion: " Repeated Test Event ",
-      invited_count: 120,
-      year: 2017,
-      month: 5,
-      day: 10,
-      cancelled: true
-    },
-    {
-      occasion: " Repeated Test Event ",
-      invited_count: 120,
-      year: 2017,
-      month: 5,
-      day: 10
-    },
-    {
-      occasion: " Repeated Test Event ",
-      invited_count: 120,
-      year: 2017,
-      month: 5,
-      day: 10,
-      cancelled: true
-    },
-    {
-      occasion: " Repeated Test Event ",
-      invited_count: 120,
-      year: 2017,
-      month: 5,
-      day: 10
-    },
-    {
-      occasion: " Repeated Test Event ",
-      invited_count: 120,
-      year: 2017,
-      month: 5,
-      day: 10,
-      cancelled: true
-    },
-    {
-      occasion: " Repeated Test Event ",
-      invited_count: 120,
-      year: 2017,
-      month: 5,
-      day: 10
-    },
-    {
-      occasion: " Repeated Test Event ",
-      invited_count: 120,
-      year: 2017,
-      month: 5,
-      day: 10,
-      cancelled: true
-    },
-    {
-      occasion: " Repeated Test Event ",
-      invited_count: 120,
-      year: 2017,
-      month: 5,
-      day: 10
-    },
-    {
-      occasion: " Test Event",
-      invited_count: 120,
-      year: 2017,
-      month: 5,
-      day: 11
-    }
-  ]
-};
+
+
 
 const months = [
   "January",
