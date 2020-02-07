@@ -70,7 +70,7 @@ body {
 /*  Events display */
 .events-container {
   overflow-y: scroll;
-  height: 100%;
+  // height: 100%;
   float: right;
   margin: 0px auto; 
   font: 13px Helvetica, Arial, sans-serif; 
@@ -94,6 +94,17 @@ body {
   -moz-box-shadow: 3px 8px 16px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   -webkit-box-shadow: 3px 8px 16px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
+
+.booking-card {
+  padding: 20px 0;
+  width: 300px;
+  margin: 20px auto;
+  display: block;
+  border-left: 10px solid #a21e4d;
+  border-radius: 3px;
+}
+
+
 .event-count, .event-name, .event-cancelled {
   display: inline;
   padding: 0 10px;
@@ -343,20 +354,6 @@ iframe#gmap_canvas { width: 100%; height:auto;}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*--------Media Querys-----*/
 
 /* Tablets and smaller */
@@ -444,7 +441,9 @@ iframe#gmap_canvas { width: 100%; height:auto;}
 
 /*----------------Reservation LIst ---------------*/
 
-
+.card a{
+ color: #a9adb2;
+}
 
 .card {
   width: 450px;
@@ -465,77 +464,68 @@ iframe#gmap_canvas { width: 100%; height:auto;}
   position: absolute;
   width: 150px;
   height: 100%;
-  transition: width 0.4s;
-  overflow: hidden;
-  z-index: 2;
-  background: #a42451; }
+  background: #a42451;
+ }
 
-.card:hover .card-body {
-  width: 100%;
-  border-radius: 0 5px 5px 0; }
-
-.card .card-body .user-card {
-  width: 150px;
-  height: 100%;
-  position: relative;
-  float: left; }
-
-.card .card-body .user-card .level {
+ .level {
   top: 15%;
   color: #fff;
   text-transform: uppercase;
   font-size: 0.75em;
   font-weight: bold;
   background: rgba(0, 0, 0, 0.15);
-  padding: 0.125rem 0.75rem;
+  padding: 0.115rem 0.60rem;
   border-radius: 100px;
-  white-space: nowrap; }
-
-.card .card-body .more-info {
-  width: 300px;
-  float: left;
-  position: absolute;
-  left: 150px;
-  height: 100%; }
-
-.card .card-body .more-info h1 {
-  color: #fff;
-  margin-bottom: 0; }
+  white-space: nowrap;
+ }
 
 
-.card .card-body .coords {
-  margin: 0 1rem;
-  color: #fff;
-  font-size: 1rem; }
-
-
-.card .card-body .coords span + span {
-  float: right; }
-
-.card .card-body .stats {
+.stats {
   font-size: 2rem;
   display: flex;
-  position: absolute;
-  bottom: 2rem;
+  flex-direction: column;
   left: 1rem;
   right: 1rem;
   top: auto;
-  color: #fff; }
-
-.card .card-body .stats > div {
-  flex: 1;
+  color: #fff; 
   text-align: center; }
 
-.card .card-body .stats div.title {
+
+  .stats_x {
+    font-size: 2rem;
+    display:inline-block;
+    width:100%;}
+
+  .stats_x div{
+    font-size: 1.5rem;
+    font-weight: bold;
+    width:50%;
+    display: inline-block;
+  }
+
+.stats div.title {
   font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase; }
 
-.card .card-body .stats div.value {
+.stats div.title_x {
+    color: #a42451;
+    font-size: 0.75rem;
+  }
+
+.stats div.value {
   font-size: 1.5rem;
   font-weight: bold;}
 
-.card .general {
+
+.stats div.value_x {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #a42451;
+ }
+  
+.general {
+  color:  #a9adb2;
   width: 300px;
   height: 100%;
   position: absolute;
@@ -544,15 +534,9 @@ iframe#gmap_canvas { width: 100%; height:auto;}
   z-index: 1;
   box-sizing: border-box;
   padding: 1rem;
-  padding-top: 0; }
+  padding-top: 0; 
+  font-size: 15px;
+}
 
-.card .general .more {
-  position: absolute;
-  bottom: 2rem;
-  right: 1rem;
-  font-size: 0.9em; }
-
-.card p {
-  font-size: 20px; }
 
   /*----------------Check In and Out ---------------*/
