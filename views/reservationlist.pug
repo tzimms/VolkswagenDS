@@ -7,12 +7,14 @@ block content
             h1 Filter Dropdown
             .filter-bar
                 span.text Show
-                select.filter-bar__select
-                    option(selected="true") All
-                    option Sold
-                    option Available
+                    select.filter-bar__select#filter-select(onchange="myFunction()")
+                        option(selected="true") All
+                        each book in bookings
+                            option #{book.name}
+                    
 
   
+
         .center
         each book in bookings 
             a.card(href='/checkinout/'+book.id)
@@ -41,10 +43,12 @@ block content
                             .value_x #{book.end_km}
 
 
-    script.
-        $(document).ready(function() {
-            var selectEl = $('.filter-bar__select');
-            selectEl.select2({
-                minimumResultsForSearch: Infinity
-            });
+
+    //- script.
+    //-     $(document).ready(function() {
+    //-         var selectEl = $('.filter-bar__select');
+    //-         selectEl.select2({
+    //-             minimumResultsForSearch: Infinity
+    //-         });
         });
+    script(src='/javascripts/Filter.js')

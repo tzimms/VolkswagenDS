@@ -521,6 +521,10 @@ input[type=date]{ text-align: left; }
   font-size: 11px;
 }
 
+.delete {
+  height:1rem;
+  width:4rem;
+}
 
 // Filter Bar
 
@@ -549,7 +553,7 @@ input[type=date]{ text-align: left; }
   }
 
 .filter-bar {
-  border: 1px solid #e1e1e1;;
+  border: 1px solid #e1e1e1;
   border-radius: 4px;
   padding: 1em;
   display: flex;
@@ -561,6 +565,7 @@ input[type=date]{ text-align: left; }
   font-weight: 500;
   margin-right: 10x;
   flex: 0;
+  text-align: center;
 }
 
 .select-container {
@@ -569,4 +574,10 @@ input[type=date]{ text-align: left; }
   border: 1px solid #e1e1e1;
   
 }
+
+.filter-bar__select {
+  width: 572px;
+  border: 1px solid #e1e1e1;
+}
+
   /*----------------Check In and Out ---------------*/
