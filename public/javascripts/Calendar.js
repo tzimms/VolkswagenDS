@@ -86,7 +86,7 @@ function date_click(event) {
   $(".events-container").show(250);
   $("#dialog").hide(250);
   $(".active-date").removeClass("active-date");
-  $(this).addClass("active-date");
+  $(this).addClass("active-date")
   show_events(event.data.events, event.data.month, event.data.day);
 }
 
@@ -246,14 +246,16 @@ function show_events(events, month, day) {
 
 // Checks if a specific date has any events
 function check_events(day, month, year) {
+  console.log(month,'hi')
   let events = [];
   for (let i = 0; i < event_data["events"].length; i++) {
     let event = event_data["events"][i];
+    console.log(event["month"],'hoe')
     if ( 
       event["day"] === day &&
-      event["month"] === month &&
+      event["month"]+1 === month &&
       event["year"] === year
-    ) {
+    ) { 
       events.push(event);
     }
   } 
