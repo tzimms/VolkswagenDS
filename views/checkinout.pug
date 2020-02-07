@@ -1,22 +1,35 @@
 extends layout
 
 block content
-  h1 Welcome to check in and out
+  
 
-  .container_check
+
+   .container
+   h1 Welcome to check in and out
     each book in bookings
-      form.update-input(action="/checkinout/update/" +book.id method="post")
-        label Start time:
-          input(type="text" name="start_time" value=book.start_time)
-        label Starting Kilometers:
-          input(type="text" name="start_km" placeholder="Your starting kilometers" value=book.start_km)
-
-      form.final-input(action="/checkinout/final/" +book.id method="post")
-        label Ending time:
-          input(type="text" name="end_time" value=book.end_time)
-        label Ending Kilometers:
-          input(type="text" name="end_km" placeholder="Your final kilometers" value=book.end_km)
-        input.btn_final(type="submit" value="Finalize you journey")
+      .row
+        .col-md-6
+          form.update-input(action="/checkinout/update/" +book.id method="post")
+            .col-sm
+              label Start time:
+            .col-sm
+              input(type="text" name="start_time" value=book.start_time)
+            .col-sm
+              label Starting Kilometers:
+            .col-sm
+              input(type="text" name="start_km" placeholder="Your starting kilometers" value=book.start_km) 
+            input.btn_final(type="submit" value="Start you journey")
+        .col-md-6
+            form.final-input(action="/checkinout/update/" +book.id method="post")
+              .col-sm
+                label Ending time:
+              .col-sm
+                  input(type="text" name="end_time" value=book.end_time)
+              .col-sm
+                label Ending Kilometers:
+              .col-sm
+                input(type="text" name="end_km" placeholder="Your final kilometers" value=book.end_km)
+              input.btn_final(type="submit" value="Finalize you journey")
 
 
 
