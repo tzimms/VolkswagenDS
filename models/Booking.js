@@ -23,6 +23,7 @@ Booking.create = (bookingInfo, callback) => {
         [bookingInfo.name, bookingInfo.date, bookingInfo.start_time, bookingInfo.end_time, bookingInfo.destination, +bookingInfo.vehicle_id],
         (err, results, fields) => callback(err, results, fields)
     );
+
 };
     
 
