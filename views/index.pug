@@ -3,6 +3,7 @@ extends layout
 block content
   h1= title
   p.index-title Pool Car #{title}
+  -console.log(event_data)
 
   //- form.date-input(action="/new" method="post")
   //-   input(type="text" name="task")
@@ -45,8 +46,6 @@ block content
     .events-container
     .booking-container
       .booking-card
-        each book in bookings
-          p.bookingData #{book.start_time} to #{book.end_time}
           
         
     #dialog.dialog
@@ -55,12 +54,12 @@ block content
         .form-container(align='center')
           label#valueFromMyButton.form-label(for='name') Your Name
           input#name.input(type='text' maxlength='36')
-          label#valueFromMyButton.form-label(for='count') Time Schedule
-          input#count.input(type='number' min='0' max='1000000' maxlength='7')
+          label#valueFromMyButton.form-label(for='time') Start Time
+          input#time.input(type='time' min='0' max='1000000' maxlength='7')
+          label#valueFromMyButton.form-label(for='timmy') End Time
+          input#timmy.input(type='time' min='0' max='1000000' maxlength='7')
           input#cancel-button.button(type='button' value='Cancel')
           input#ok-button.button(type='button' value='OK')
-
-
 
 
   
@@ -72,15 +71,17 @@ block content
       value=""
       type="hidden"
     )  
-    input.book-button(
-      type="submit"
-      value="Book a car"
-      class="btn btn-success"
-    )
+    //- input.book-button(
+    //-   type="submit"
+    //-   value="Book a car"
+    //-   class="btn btn-success"
+    //- )
 
 
 
   //- script(src='app.js')
+  script.
+    const event_data=!{JSON.stringify(event_data)};
   script(src='/javascripts/Calendar.js')
 
     
