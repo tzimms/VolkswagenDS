@@ -5,7 +5,6 @@ const getAllBookings = (req, res, next) => {
   Booking.getAll((err, results) => {
     if (err) return next(err);
     req.bookings = results;
-    //console.log(results)
     next();
   });
 };
@@ -13,7 +12,7 @@ const getAllBookings = (req, res, next) => {
 const createBooking = (req, res, next) => {
   Booking.create(req.body, err => {
     if (err) return res.render("error", { err });
-    res.redirect("/");
+    res.redirect("/reservationlist");
   });
 };
 
