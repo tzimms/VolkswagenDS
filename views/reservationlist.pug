@@ -13,32 +13,32 @@ block content
                     option Available
 
   
-    .center
-    each book in bookings 
-        a.card(href='/checkinout/'+book.id)
-            .card-body
-                .user-card
-                    .level
-                        | #{book.name}
-                    .stats
+        .center
+        each book in bookings 
+            a.card(href='/checkinout/'+book.id)
+                .card-body
+                    .user-card
+                        .level
+                            | #{book.name}
+                        .stats
+                            div
+                                .title Start time
+                                .value #{book.start_time}
+                                .title End time
+                                .value #{book.end_time}
+                .general
+                    h1 #{book.date}
+                    p
+                        | The car is booked by #{book.name} on #{book.date} from #{book.start_time} to #{book.end_time} to  #{book.destination}
+                    .stats_x
                         div
-                            .title Start time
-                            .value #{book.start_time}
-                            .title End time
-                            .value #{book.end_time}
-            .general
-                h1 #{book.date}
-                p
-                    | The car is booked by #{book.name} on #{book.date} from #{book.start_time} to #{book.end_time} to  #{book.destination}
-                .stats_x
-                    div
-                        .title_x Start km
-                        br
-                        .value_x #{book.start_km}
-                    div
-                        .title_x End km
-                        br
-                        .value_x #{book.end_km}
+                            .title_x Start km
+                            br
+                            .value_x #{book.start_km}
+                        div
+                            .title_x End km
+                            br
+                            .value_x #{book.end_km}
 
 
     script.
