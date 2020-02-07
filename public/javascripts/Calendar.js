@@ -191,6 +191,8 @@ function new_event_json(name, time, timmy, date, day) {
   event_data["events"].push(event);
   console.log('event', event)
 
+
+
 //SENDING DATA
 
   const bookingFormLink = document.createElement("a");

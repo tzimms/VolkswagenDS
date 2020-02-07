@@ -8,24 +8,24 @@ block content
     a.card(href='/checkinout/'+book.id)
       .card-body
         .user-card
-          .level.center
+          .level
              | #{book.name}
-        .more-info
-          h1 #{book.name}
-          .coords
-            span #{book.start_time}
-            span #{book.end_time}
-          .coords
-            span 
-            span #{book.destination}
           .stats
             div
-              .title Start km
-              .value #{book.start_km}
-            div
-              .title End km
-              .value #{book.end_km}
+              .title Start time
+              .value #{book.start_time}
+              .title End time
+              .value #{book.end_time}
       .general
         h1 #{book.date}
         p
-          | The car is Booked by #{book.name} on #{book.date} from #{book.start_time} to #{book.end_time}
+          | The car is booked by #{book.name} on #{book.date} from #{book.start_time} to #{book.end_time} to  #{book.destination}
+        .stats_x
+          div
+            .title_x Start km
+            br
+            .value_x #{book.start_km}
+          div
+            .title_x End km
+            br
+            .value_x #{book.end_km}
