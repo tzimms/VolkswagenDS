@@ -307,9 +307,8 @@ body {
   z-index: 5;
   background: #fff;
   position:absolute;
-  width:415px;
-  height: 500px;
-  left:387px;
+  width:400px;
+  left:374px;
   border-top-right-radius:3px;
   border-bottom-right-radius: 3px;
   display:none;
@@ -321,7 +320,7 @@ body {
   text-align: center;
 }
 .form-container {
-  margin-top:25%;
+  margin-top: 10px;
 }
 .form-label {
   color:#333;
@@ -343,6 +342,11 @@ body {
 }
 .error-input {
   border-color: #FF1744;
+}
+
+#bookingFormLinkDiv {
+  text-align: center;
+  padding-top: 10px;
 }
 
 /*----------------BOOKING FORM ---------------*/
