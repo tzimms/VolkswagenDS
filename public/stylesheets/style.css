@@ -511,11 +511,16 @@ input[type=date] {
 .filter-bar .text {
   font-weight: 500;
   margin-right: 10x;
-  flex: 0; }
+  flex: 0;
+  text-align: center; }
 
 .select-container {
   width: 100px;
   flex: 1;
+  border: 1px solid #e1e1e1; }
+
+.filter-bar__select {
+  width: 572px;
   border: 1px solid #e1e1e1; }
 
 /*----------------Check In and Out ---------------*/
