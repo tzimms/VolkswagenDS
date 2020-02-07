@@ -19,13 +19,20 @@ const showHomepage = (req, res, next) => {
 const showBookingPage = (req, res, next) => {
   const bookings = req.body;
   const vehicles = req.vehicles;
+
+  const day = req.query.event_day < 10 ? '0' + req.query.event_day : req.query.event_day;
+  const month = req.query.event_month < 10 ? '0' + req.query.event_month : req.query.event_month;
+  const year = req.query.event_year;
+  const formatedDate = `${year}-${month}-${day}`
+
   const event = {
     name: req.query.event_name,
     start_time: req.query.event_start_time,
     end_time: req.query.event_end_time,
-    day: req.query.event_day,
-    month: req.query.event_month + 1,
-    year: req.query.event_year,
+    formatedDate,
+    day,
+    month,
+    year,
   };
   res.render("bookingform", { bookings, event, vehicles});
 };

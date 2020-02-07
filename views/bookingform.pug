@@ -10,7 +10,11 @@ block content
             input.form-control(type='text' name="name" value=event.name)
           .form-group
             label(for='date') Date Selected
-            input.form-control#inpu(type='date' name="date" )
+            input.form-control#inpu(
+              type='date'
+              name="date"
+              value=event.formatedDate
+            )
           .form-group
             label(for='inithour') Initial Hour Selected
             input.form-control(type='text' name="start_time" value=event.start_time)
