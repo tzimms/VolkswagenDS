@@ -4,9 +4,8 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 50px;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  text-align: center; }
+  text-align: center;
+  margin: 0px; }
 
 .date-input, .carBookBtn {
   text-align: center;
@@ -18,7 +17,7 @@ body {
   width: 100%;
   margin: 0;
   background: white;
-  font-family: 'Montserrat'; }
+  font-family: 'Montserrat', sans-serif; }
 
 .content {
   overflow: none;
@@ -300,22 +299,16 @@ body {
   border-color: #FF1744; }
 
 /*----------------BOOKING FORM ---------------*/
+.navbar {
+  padding: 1.5rem 1rem !important;
+  justify-content: start !important; }
+
 input[type=date] {
   text-align: left; }
 
 .mapouter {
   position: relative;
   text-align: right;
-  width: 100%;
-  height: auto; }
-
-.gmap_canvas {
-  overflow: hidden;
-  background: none !important;
-  width: 100%;
-  height: auto; }
-
-iframe#gmap_canvas {
   width: 100%;
   height: auto; }
 

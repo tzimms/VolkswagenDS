@@ -3,7 +3,6 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  -console.log(event)
   each vehicle in vehicles
       div.container
         form(action="/bookingform" method="post")
@@ -23,7 +22,6 @@ block content
             label(for='model') Select a car
             select.custom-select( name="vehicle_id")
               option(value='1') #{vehicle.model}
-              //- option(value='otro')
 
           .form-group
             label(for='destination') 

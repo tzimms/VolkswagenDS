@@ -9,22 +9,14 @@
 //LANDING-----------------------------------------LANDING//
 
 
-// h1 {
-//   color: #a9adb2;
-//   font-family: 'Montserrat', sans-serif;
-//   font-weight: 700;
-//   font-size: 70px;
-//   text-align: center;
-// }
 
 .index-title {
   color: #a9adb2;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 50px;
-  padding-top: 20px;
-  padding-bottom: 10px;
   text-align: center;
+  margin: 0px;
 }
 
 .date-input, .carBookBtn {
@@ -48,7 +40,7 @@ body {
   // background: -moz-linear-gradient(left, #363795, #005C97);
   // background: -o-linear-gradient(left, #363795, #005C97);
   // background: linear-gradient(to right, #363795, #005C97); 
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
 } 
 .content {
   overflow: none;
@@ -342,16 +334,9 @@ body {
 }
 
 /*----------------BOOKING FORM ---------------*/
-
-input[type=date]{
-  text-align: left;
-}
+.navbar{ padding: 1.5rem 1rem!important;justify-content: start!important;}
+input[type=date]{ text-align: left; }
 .mapouter{position:relative;text-align:right;width:100%;height:auto;}
-.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:auto;}
-iframe#gmap_canvas { width: 100%; height:auto;}
-
-
-
 
 
 /*--------Media Querys-----*/
