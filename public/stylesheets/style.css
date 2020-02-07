@@ -145,10 +145,10 @@ body {
   border-top-right-radius: 5px; }
 
 .left-button:hover {
-  background: #3FADFF; }
+  background: #b54b71; }
 
 .right-button:hover {
-  background: #00C1FF; }
+  background: #a21e4d; }
 
 /* Buttons */
 .button {
@@ -244,7 +244,7 @@ body {
   box-shadow: 0 2px 6px RGBA(255, 50, 120, 0.9); }
 
 .event-date {
-  border-color: #52A0FD;
+  border-color: #a21e4d;
   box-shadow: 0 2px 8px RGBA(130, 180, 255, 0.9); }
 
 .active-date {
@@ -253,7 +253,7 @@ body {
   color: #fff; }
 
 .event-date.active-date {
-  background: #52A0FD;
+  background: #a21e4d;
   box-shadow: 0 2px 8px RGBA(130, 180, 255, 0.9); }
 
 /* input dialog */
@@ -261,9 +261,8 @@ body {
   z-index: 5;
   background: #fff;
   position: absolute;
-  width: 415px;
-  height: 500px;
-  left: 387px;
+  width: 400px;
+  left: 374px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   display: none;
@@ -275,7 +274,7 @@ body {
   text-align: center; }
 
 .form-container {
-  margin-top: 25%; }
+  margin-top: 10px; }
 
 .form-label {
   color: #333; }
@@ -293,10 +292,14 @@ body {
 
 .input:focus {
   outline: none;
-  border-color: #00C9FB; }
+  border-color: #a21e4d; }
 
 .error-input {
   border-color: #FF1744; }
+
+#bookingFormLinkDiv {
+  text-align: center;
+  padding-top: 10px; }
 
 /*----------------BOOKING FORM ---------------*/
 .navbar {
@@ -321,10 +324,10 @@ input[type=date] {
     max-width: 100%;
     width: 370px;
     height: 100%;
-    background: #52A0FD;
-    background: -moz-linear-gradient(left, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
-    background: -webkit-linear-gradient(left, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%);
-    background: linear-gradient(to right, #52A0FD 0%, #00C9FB 80%, #00C9FB 100%); }
+    background: #a21e4d;
+    background: -moz-linear-gradient(left, #a21e4d 0%, #FF5D95 80%, #FF5D95 100%);
+    background: -webkit-linear-gradient(left, #a21e4d 0%, #FF5D95 80%, #FF5D95 100%);
+    background: linear-gradient(to right, #a21e4d 0%, #FF5D95 80%, #FF5D95 100%); }
   .dialog {
     width: 370px;
     height: 450px;
