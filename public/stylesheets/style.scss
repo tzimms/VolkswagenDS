@@ -479,11 +479,12 @@ input[type=date]{ text-align: left; }
     display:inline-block;
     width:100%;}
 
-  .stats_x div{
-    font-size: 1.5rem;
-    font-weight: bold;
-    width:50%;
-    display: inline-block;
+    .stats_x div {
+      font-size: 1.5rem;
+      font-weight: bold;
+      width: 50%;
+      display: inline-block;
+      font-size: 16px;
   }
 
 .stats div.title {
@@ -508,6 +509,7 @@ input[type=date]{ text-align: left; }
  }
   
 .general {
+  width: 300px;
   color: #a9adb2;
   width: 53%;
   height: 100%;
@@ -576,7 +578,7 @@ input[type=date]{ text-align: left; }
 }
 
 .filter-bar__select {
-  width: 572px;
+  width: 100%;
   border: 1px solid #e1e1e1;
 }
 
